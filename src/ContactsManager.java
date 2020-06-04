@@ -159,6 +159,7 @@ public class ContactsManager implements IContactsManager{
     }
 
     public void displayStudent(int index,ArrayList<Contact> contactsList)  {
+        System.out.println(contactsList.get(index).toString());
         Menu.displayMenu();
     }
 
