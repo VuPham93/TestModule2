@@ -1,11 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class FileReaderAndWriter {
-    Scanner scanner = new Scanner(System.in);
-    private static final String COMMA_DELIMITER = ",";
-    private static final String NEW_LINE_SEPARATOR = "\n";
+    private static final String COMMA = ",";
+    private static final String NEW_LINE = "\n";
     File file;
 
     public FileReaderAndWriter(){
@@ -17,19 +15,19 @@ public class FileReaderAndWriter {
         FileWriter fileWriter = new FileWriter(file);
         for (int i = 0; i < arrayList.size();i++){
             fileWriter.append(arrayList.get(i).getPhoneNumber());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getGroup());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getName());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getGender());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getAddress());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getDateOfBirth());
-            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(COMMA);
             fileWriter.append(arrayList.get(i).getEmail());
-            fileWriter.append(NEW_LINE_SEPARATOR);
+            fileWriter.append(NEW_LINE);
         }
         fileWriter.flush();
         fileWriter.close();
@@ -46,7 +44,7 @@ public class FileReaderAndWriter {
             String line;
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while ((line= bufferedReader.readLine())!=null){
-                String[] splitData = line.split(COMMA_DELIMITER);
+                String[] splitData = line.split(COMMA);
                 String phoneNumber = splitData[0];
                 String group = splitData[1];
                 String name = splitData[2];

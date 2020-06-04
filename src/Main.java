@@ -23,11 +23,11 @@ public class Main {
                     contactsManager.addContact(contacts);
                     break;
                 case 3:
-                    System.out.print("PLease enter phone number:");
+                    System.out.print("Please enter phone number:");
                     contactsManager.editContact(scanner.nextLine(), contacts);
                     break;
                 case 4:
-                    System.out.print("PLease enter phone number:");
+                    System.out.print("Please enter phone number:");
                     contactsManager.deleteContact(scanner.nextLine(), contacts);
                     break;
                 case 5:
