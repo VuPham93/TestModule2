@@ -137,6 +137,29 @@ public class ContactsManager implements IContactsManager{
 
     @Override
     public void findContact(ArrayList<Contact> contactsList) {
+        System.out.println("Moi ban nhap chuc nang tim kiem: ");
+        System.out.println("1.Tim theo so dien thoai ");
+        System.out.println("2.Tim theo ten ");
+        int chose = scanner.nextInt();
+        if (chose==1){
+            System.out.println("Moi ban nhap vao so dien thoai");
+            String phoneSearch = scanner.nextLine();
+            if (checkPhone(phoneSearch,contactsList)!=-1){
+                int indexPhone = checkPhone(phoneSearch,contactsList);
+                displayStudent(indexPhone,contactsList);
+            }else System.out.println("Khong tim thay");
+        }else if (chose==2){
+            System.out.println("Moi ban nhap vao so dien thoai");
+            String nameSearch = scanner.nextLine();
+            if (checkName(nameSearch,contactsList)!=-1){
+                int indexName = checkName(nameSearch,contactsList);
+                displayStudent(indexName,contactsList);
+            }else System.out.println("Khong tim thay");
+        }
+    }
+
+    public void displayStudent(int index,ArrayList<Contact> contactsList)  {
+        Menu.displayMenu();
     }
 
     public String checkInformation(String phoneNumber, String group, String name, String gender, String address,String dateOfBirth,String email){
