@@ -7,7 +7,7 @@ public class FileReaderAndWriter {
     File file;
 
     public FileReaderAndWriter(){
-        String filePath = "contacts/contacts.csv";
+        String filePath = "contacts.csv";
         file = new File(filePath);
     }
 
@@ -32,6 +32,7 @@ public class FileReaderAndWriter {
         fileWriter.flush();
         fileWriter.close();
         System.out.println("Write to file complete!");
+        Menu.displayMenu();
 
     }
 
@@ -58,6 +59,8 @@ public class FileReaderAndWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Menu.displayMenu();
         return students;
     }
 }

@@ -120,7 +120,8 @@ public class ContactsManager implements IContactsManager{
                 System.out.println("Deleted");
                 contactsList.remove(index);
             }
-            else Menu.displayMenu();
+            else
+                Menu.displayMenu();
 
         }
         else {
@@ -142,6 +143,7 @@ public class ContactsManager implements IContactsManager{
         System.out.println("2.Name ");
         int chose = scanner.nextInt();
         if (chose==1){
+            scanner.nextLine();
             System.out.println("Please enter phone number");
             String phoneSearch = scanner.nextLine();
             if (checkPhone(phoneSearch,contactsList)!=-1){
@@ -151,6 +153,7 @@ public class ContactsManager implements IContactsManager{
             else System.out.println("Not found");
         }
         else if (chose==2){
+            scanner.nextLine();
             System.out.println("Please enter name");
             String nameSearch = scanner.nextLine();
             if (checkName(nameSearch,contactsList)!=-1){

@@ -10,8 +10,10 @@ public class Main {
         FileReaderAndWriter fileReaderAndWriter = new FileReaderAndWriter();
         ArrayList<Contact> contacts = ContactsList.creatContactsList();
 
+        Menu.displayMenu();
+
         do {
-            Menu.displayMenu();
+
             choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -34,10 +36,10 @@ public class Main {
                     contactsManager.findContact(contacts);
                     break;
                 case 6:
-                    fileReaderAndWriter.writeFile(contacts);
+                    fileReaderAndWriter.readFile(contacts);
                     break;
                 case 7:
-                    fileReaderAndWriter.readFile(contacts);
+                    fileReaderAndWriter.writeFile(contacts);
                     break;
                 case 8:
                     break;
